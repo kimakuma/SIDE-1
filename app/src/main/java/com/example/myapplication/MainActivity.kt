@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        // drawer icon change <- after instantiating actionbartoggle
+        // kimakuma] drawer icon change <- after instantiating actionbartoggle
         toolbar.setNavigationIcon(R.drawable.menu)
 
         if (savedInstanceState == null) {
