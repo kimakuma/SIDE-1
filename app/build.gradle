@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt' // coroutine
 }
 
 android {
@@ -29,12 +30,16 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+//        jvmTarget = JavaVersion.VERSION_1_8.toString()
+//        freeCompilerArgs = listOf("-Xcontext-receivers")
     }
 }
 
 dependencies {
-    // swipe
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    // room
+    implementation 'androidx.room:room-runtime:2.5.1'
+    kapt "androidx.room:room-compiler:2.5.1"
+    implementation "androidx.room:room-ktx:2.5.1" // coroutine
 
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
